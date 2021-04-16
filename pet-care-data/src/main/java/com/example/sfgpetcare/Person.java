@@ -1,4 +1,4 @@
-package com.example.sfgpetcare.model;
+package com.example.sfgpetcare;
 
 public class Person {
     private String firstName;
