@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>sfg-pet-care</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>sfg-pet-care</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -44,6 +44,6 @@
     </build>
     <scm>
         <developerConnection>scm:git:https://github.com/rajeshbattula631/sfg-pet-care.git</developerConnection>
-<tag>sfg-pet-care-0.0.1</tag>
+<tag>sfg-pet-care-0.0.2</tag>
     </scm>
 </project>
