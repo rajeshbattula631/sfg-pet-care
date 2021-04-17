@@ -45,6 +45,6 @@
     </build>
     <scm>
         <developerConnection>scm:git:https://github.com/rajeshbattula631/sfg-pet-care.git</developerConnection>
-
+<tag>main</tag>
     </scm>
 </project>
