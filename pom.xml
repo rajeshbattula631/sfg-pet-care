@@ -30,8 +30,21 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <tagBase>https://github.com/rajeshbattula631/sfg-pet-care/releases</tagBase>
+                    <goals>
+                        install
+                    </goals>
+                </configuration>
+            </plugin>
         </plugins>
         </pluginManagement>
     </build>
+    <scm>
+        <developerConnection>scm:git:https://github.com/rajeshbattula631/sfg-pet-care.git</developerConnection>
 
+    </scm>
 </project>
