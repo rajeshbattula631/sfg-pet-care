@@ -21,6 +21,7 @@ public class VisitMapService extends AbstractMapService<Visit, Long> implements 
         super.delete(object);
     }
 
+
     @Override
     public Visit save(Visit object) {
         if(object.getPet() == null || object.getPet().getOwner() == null || object.getPet().getId() == null|
