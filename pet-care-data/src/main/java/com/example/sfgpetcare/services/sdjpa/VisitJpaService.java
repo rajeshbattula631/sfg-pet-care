@@ -33,6 +33,7 @@ public class VisitJpaService implements VisitService {
 
     @Override
     public Visit save(Visit object) {
+        System.out.println("########-----JPA Implementation------########");
         return visitRepository.save(object);
     }
 

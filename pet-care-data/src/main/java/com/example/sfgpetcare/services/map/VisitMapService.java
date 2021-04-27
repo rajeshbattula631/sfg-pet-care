@@ -2,11 +2,13 @@ package com.example.sfgpetcare.services.map;
 
 import com.example.sfgpetcare.model.Visit;
 import com.example.sfgpetcare.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
     @Override
     public Set<Visit> findAll() {
@@ -26,6 +28,7 @@ public class VisitMapService extends AbstractMapService<Visit, Long> implements 
 
     @Override
     public Visit save(Visit object) {
+        System.out.println("***********----Map Implementation------***************");
         if(object.getPet() == null || object.getPet().getOwner() == null || object.getPet().getId() == null|
                 object.getPet().getOwner().getId() == null){
             throw new RuntimeException("Invalid Visit");
