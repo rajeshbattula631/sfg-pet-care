@@ -1,10 +1,7 @@
 package com.example.sfgpetcare.bootstrap;
 
 import com.example.sfgpetcare.model.*;
-import com.example.sfgpetcare.services.OwnerService;
-import com.example.sfgpetcare.services.PetTypeService;
-import com.example.sfgpetcare.services.SpecialitySevice;
-import com.example.sfgpetcare.services.VetService;
+import com.example.sfgpetcare.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -21,12 +18,15 @@ public class DataLoader implements CommandLineRunner {
 
     private final SpecialitySevice specialitySevice;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitySevice specialitySevice) {
+    private final VisitService visitService;
+
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitySevice specialitySevice, VisitService visitService) {
 
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialitySevice = specialitySevice;
+        this.visitService = visitService;
     }
 
     @Override
@@ -96,6 +96,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasCat);
         ownerService.save(owner2);
 
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
+
         Owner owner3 = new Owner();
         owner3.setFirstName("Rajesh");
         owner3.setLastName("Battula");
@@ -111,6 +118,13 @@ public class DataLoader implements CommandLineRunner {
         owner3.getPets().add(rodCat);
 
         ownerService.save(owner3);
+
+        Visit rodCatVisit = new Visit();
+        rodCatVisit.setPet(rodCat);
+        rodCatVisit.setDate(LocalDate.now());
+        rodCatVisit.setDescription("RodCat Small Surgery");
+
+        visitService.save(rodCatVisit);
 
         System.out.println("Loaded Owners....");
         Vet vet1 = new Vet();
